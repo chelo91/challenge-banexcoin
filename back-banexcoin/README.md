@@ -23,6 +23,12 @@ npm run start
 Backend de Banexcoin para envío y recepción de transacciones.  
 Se realizó en Nest, incluye lógica de **comisiones**, manejo de **colas con BullMQ**, y generación automática de **datos de prueba**.
 
+## Endpoints
+
+Postman: [https://carpincho-dev.postman.co/workspace/Team-Workspace~9d305ede-95c2-4361-8d03-9fda8131ff13/collection/44292263-cceffbd5-aed5-4c1b-bbd5-a653e2a5336a?action=share&creator=44292263](https://carpincho-dev.postman.co/workspace/Team-Workspace~9d305ede-95c2-4361-8d03-9fda8131ff13/collection/44292263-cceffbd5-aed5-4c1b-bbd5-a653e2a5336a?action=share&creator=44292263)
+
+También se puede importar el archivo `Banexcoin.postman_collection.json` en Postman.
+
 ## Detalles Técnicos
 
 1. **Balances**  
