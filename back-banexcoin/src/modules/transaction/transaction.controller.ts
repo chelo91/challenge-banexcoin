@@ -4,7 +4,7 @@ import { AccountService } from '../account/account.service';
 import { CreateTransactionDto } from '../../dto/create-transaction.dto';
 import { CreateTransactionServiceDto } from '../../dto/create-transaction-service.dto';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
-import { Transaction, TransactionStatus, TransactionType } from 'src/entities/transaction.entity';
+import { Transaction, TransactionStatus, TransactionType } from '../../entities/transaction.entity';
 import { roundToTwoDecimals } from '../../utils/number.utils';
 import { TransactionResponseDto } from '../../dto/transaction-response.dto';
 import { plainToInstance } from 'class-transformer';

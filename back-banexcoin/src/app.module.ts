@@ -2,8 +2,6 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { BullModule } from '@nestjs/bullmq';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { UserModule } from './modules/user/user.module';
 import { AccountModule } from './modules/account/account.module';
 import { CommissionModule } from './modules/commission/commission.module';
@@ -12,7 +10,6 @@ import { User } from './entities/user.entity';
 import { Account } from './entities/account.entity';
 import { Commission } from './entities/commission.entity';
 import { Transaction } from './entities/transaction.entity';
-import { AccountController } from './modules/account/account.controller';
 import { AuthModule } from './modules/auth/auth.module';
 import { DatabaseInitModule } from './modules/database/database-init.module';
 
@@ -51,7 +48,7 @@ import { DatabaseInitModule } from './modules/database/database-init.module';
     TransactionModule,
     DatabaseInitModule
   ],
-  controllers: [AppController, AccountController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
