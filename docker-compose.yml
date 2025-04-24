@@ -1,0 +1,46 @@
+services:
+  frontend:
+    container_name: banexcoin-frontend
+    build:
+      context: ./front-banexcoin
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  backend:
+    container_name: banexcoin-backend
+    build:
+      context: ./back-banexcoin
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    depends_on:
+      - postgres
+      - redis
+
+  postgres:
+    container_name: banexcoin-postgres
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=banexcoin
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  redis:
+    container_name: banexcoin-redis
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  postgres_data:
+  redis_data:
