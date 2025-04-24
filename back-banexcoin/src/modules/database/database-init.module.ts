@@ -77,16 +77,6 @@ export class DatabaseInitModule implements OnApplicationBootstrap {
       });
       this.logger.log(`Worker user created with ID: ${workerUser.user.id} and referred by admin`);
 
-      // Create a disabled user
-      const disabledUser = await this.databaseSeedService.createUserWithAccount({
-        email: 'disabled@test.com',
-        password: 'password123',
-        firstName: 'Disabled',
-        lastName: 'User',
-        type: UserType.USER,
-        status: UserStatus.DISABLED,
-      });
-
       // Create test transaction for admin
       const testTransaction = await this.databaseSeedService.createTransaction({
         accountDestinationId: adminResult.account.id,
@@ -98,8 +88,6 @@ export class DatabaseInitModule implements OnApplicationBootstrap {
       });
 
       this.logger.log(`Test transaction created for admin with ID: ${testTransaction.id}`);
-
-      this.logger.log(`Disabled user created with ID: ${disabledUser.user.id}`);
 
       this.logger.log('Database initialization completed successfully');
     } catch (error) {
